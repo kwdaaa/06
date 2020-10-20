@@ -124,3 +124,5 @@ echo '<br>';
 // 車の情報表示を表示
 echo $car1->infomation();
 echo '<br>';
+
+// もう１回プルリクエストします。
