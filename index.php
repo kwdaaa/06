@@ -1,72 +1,84 @@
 <?php
 
 // 以下にCarクラスを定義して、当プログラムを実行した時にエラーがでないようにして下さい。
-Class Car{
+class Car
+{
 
     // 変数を宣言。値は入れない。
-    public $getName;
-    public $getNumber;
-    public $getColor;
+    // publicではなく、private $name;にすることで、自分のクラスの内側からのみ参照と呼び出しが可能。
+    private $name;
+    private $number;
+    private $color;
 
 
-    public function __construct($getName, $getNumber, $getColor)
+    // 値の初期値を設定的...?
+    public function __construct($name, $number, $color)
     {
-        $this->getName = $getName;
-        $this->getNumber = $getNumber;
-        $this->getColor = $getColor;
+        $this->name = $name;
+        $this->number = $number;
+        $this->color = $color;
     }
 
 
-    // クラス内にgetName関数を作った。
-    // 「$this->」にすることでクラスないで定義した「$getName;」を拾うことができる。
+
+    ////ここから取得（get）
+
+    // nameの取得
+    // privateにしてもnameを取得（get）できる関数
     public function getName()
     {
-        echo $this->getName;
+        return $this->name;
     }
 
-    // クラス内にgetName関数を作った。
-    // 「$this->」にすることでクラスないで定義した「$getName;」を拾うことができる。
+    // numberの取得
+    // privateにしてもnumberを取得（get）できる関数
     public function getNumber()
     {
-        echo $this->getNumber;
+        return $this->number;
     }
 
-    // クラス内にgetName関数を作った。
-    // 「$this->」にすることでクラスないで定義した「$getName;」を拾うことができる。
+    // colorの取得
+    // privateにしてもcolorを取得（get）できる関数
     public function getColor()
     {
-        echo $this->getColor;
+        return $this->color;
     }
 
 
-    // クラス内にgetName関数を作った。
-    // 「$this->」にすることでクラスないで定義した「$getName;」を拾うことができる。
-    public function setName($setName)
+
+    ////ここから設定（set）
+
+    // nameの設定
+    // privateにしてもnameを設定（set）できる関数
+    public function setName($name)
     {
-        echo $this->getName;
+        $this->name = $name;
     }
 
-    // クラス内にgetName関数を作った。
-    // 「$this->」にすることでクラスないで定義した「$getName;」を拾うことができる。
-    public function setNumber($setNumber)
+    // numberの設定
+    // privateにしてもnumberを設定（set）できる関数
+    public function setNumber($number)
     {
-        echo $this->getNumber;
+        $this->number = $number;
     }
 
-    // クラス内にgetName関数を作った。
-    // 「$this->」にすることでクラスないで定義した「$getName;」を拾うことができる。
-    public function setColor($setColor)
+    // colorの設定
+    // privateにしてもcolorを設定（set）できる関数
+    public function setColor($color)
     {
-        echo $this->getColor;
+        $this->color = $color;
     }
 
-    // クラス内にgetName関数を作った。
-    // 「$this->」にすることでクラスないで定義した「$getName;」を拾うことができる。
-    public function infomation($infomation)
+
+
+
+
+    public function infomation()
     {
-        echo '車の車種：' . $this->getName . '、車体番号：' . $this->getNumber . '、カラー' . $this->age . 'です。<br>';
+        echo '車の車種：' . $this->name . '、車体番号：' . $this->number . '、カラー：' . $this->color . 'です。<br>';
     }
 }
+
 
 
 
@@ -77,36 +89,38 @@ Class Car{
 $car1 = new Car('ランクル', 100, 'black');
 
 // 車名(車種)を取得
+// getName関数の中の$this->getName;が実行される
+// 
 echo $car1->getName();
-echo $getName . '<br>';
+echo '<br>';
 
 // 車体番号を取得
 echo $car1->getNumber();
-echo $getNumber . '<br>';
+echo '<br>';
 
 // カラーを取得
 echo $car1->getColor();
-echo $getColor . '<br>';
+echo '<br>';
 
 // 車の情報表示を表示
-// echo $car1->infomation();
-// echo '<br>';
+echo $car1->infomation();
+echo '<br>';
 
 // 車名(車種)を更新
 $car1->setName('アルファード');
 echo $car1->getName();
-echo $setName . '<br>';
+echo '<br>';
 
 // 車体番号を取得
 $car1->setNumber(200);
 echo $car1->getNumber();
-echo $setNumber . '<br>';
+echo '<br>';
 
 // カラーを取得
 $car1->setColor('red');
 echo $car1->getColor();
-echo $setColor . '<br>';
+echo '<br>';
 
 // 車の情報表示を表示
-// echo $car1->infomation();
-// echo '<br>';
+echo $car1->infomation();
+echo '<br>';
