@@ -81,31 +81,42 @@ class Car
 
 class Taxi extends Car
 {
+    // $passenger = 現在の乗車人数（空っぽ）
     private $passenger;
-    
 
+
+    // $pickUp = 乗車してきた人数
+    // pickUp(3)の「3」を$pickUpにいれる。
     public function pickUp($pickUp)
     {
+        // pickUp(3)の「3」を現在の乗車人数変数 $passengerにいれる(足す)。
         $this->passenger = $this->passenger + $pickUp;
     }
 
+    // $lowerPassenger = 降車した人数
+    // pickUp(2)の「2」を$lowerPassengerにいれる。
     public function lower($lowerPassenger)
     {
+        // 現在の乗車人数 から 降車した人数を差し引く
         $this->passenger = $this->passenger - $lowerPassenger;
-        
-        if($this->passenger >= 0){
 
+        // もし現在の乗車人数が0以上だったら
+        if ($this->passenger >= 0) {
+            // 降車した人数（$lowerPassenger）を表示
             echo $lowerPassenger . '人降車しました';
+
+            // もし現在の乗車人数が0未満だったら  
         } else {
             echo '降車人数に誤りがあります';
         }
     }
 
+    // Carクラスから引き継いだ関数「$this->getName()」「$this->getNumber()」「$this->getColor()」
+    // Taxiクラスで定義した変数「$this->passenger」
     public function infomation()
     {
         echo '車の車種：' . $this->getName() . '、' . '車体番号：' . $this->getNumber() . '、' . 'カラー：' . $this->getColor() . '、' . '乗車人数は' . $this->passenger . '人です。';
     }
-
 }
 
 
