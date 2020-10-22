@@ -87,10 +87,11 @@ class Taxi extends Car
 
     // $pickUp = 乗車してきた人数
     // pickUp(3)の「3」を$pickUpにいれる。
-    public function pickUp($pickUp)
+    public function pickUp($pickUpPassenger)
     {
         // pickUp(3)の「3」を現在の乗車人数変数 $passengerにいれる(足す)。
-        $this->passenger = $this->passenger + $pickUp;
+        $this->passenger = $this->passenger + $pickUpPassenger;
+        // $this->passenger += $pickUpPassenger; でもOK
     }
 
     // $lowerPassenger = 降車した人数
@@ -99,6 +100,7 @@ class Taxi extends Car
     {
         // 現在の乗車人数 から 降車した人数を差し引く
         $this->passenger = $this->passenger - $lowerPassenger;
+        // $this->passenger -= $lowerPassenger; でもOK
 
         // もし現在の乗車人数が0以上だったら
         if ($this->passenger >= 0) {
