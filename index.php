@@ -75,32 +75,6 @@ class Car
     }
 }
 
-
-class Taxi extends car
-{
-
-    public function pickUp()
-    {
-        # code...
-    }
-
-    public function infomation()
-    {
-        # code...
-    }
-
-    public function lower()
-    {
-        # code...
-    }
-
-
-}
-
-
-
-
-
 // 以下を実行した時にエラーがでないようにして下さい。
 // Carクラスのインスタンスを生成
 // 引数 : 車名、車体番号、カラー

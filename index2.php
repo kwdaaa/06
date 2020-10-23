@@ -46,32 +46,6 @@ class Car
         return $this->color;
     }
 
-
-
-    ////ここから設定（set）
-
-    // nameの設定
-    // privateにしてもnameを設定（set）できる関数
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    // numberの設定
-    // privateにしてもnumberを設定（set）できる関数
-    public function setNumber($number)
-    {
-        $this->number = $number;
-    }
-
-    // colorの設定
-    // privateにしてもcolorを設定（set）できる関数
-    public function setColor($color)
-    {
-        $this->color = $color;
-    }
-
-
     public function infomation()
     {
         echo '車の車種：' . $this->name . '、車体番号：' . $this->number . '、カラー：' . $this->color . 'です。<br>';
